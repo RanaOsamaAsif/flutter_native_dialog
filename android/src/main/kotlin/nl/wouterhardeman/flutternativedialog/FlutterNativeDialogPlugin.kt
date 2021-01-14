@@ -42,7 +42,7 @@ class FlutterNativeDialogPlugin(val activity: Activity) : MethodCallHandler {
         .setNegativeButton(call.argument<String>("negativeButtonText")) { _, _ -> result.success(false) }
         .setCancelable(false)
     }
-
+    builder.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
     builder.create().show()
   }
 }
